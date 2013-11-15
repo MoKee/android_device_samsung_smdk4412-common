@@ -109,8 +109,8 @@ on post-fs-data
     chown system radio /sys/class/camera/rear/isp_core
     chown system radio /sys/class/camera/front/front_camfw
     chown system radio /sys/class/camera/front/front_camtype
-    chmod 0622 /data/ISP_CV
     write /data/ISP_CV 1
+    chmod 0622 /data/ISP_CV
 
 # Permissions for bluetooth
     setprop ro.bt.bdaddr_path "/efs/bluetooth/bt_addr"
@@ -459,7 +459,7 @@ service p2p_supplicant /system/bin/wpa_supplicant \
     #   user wifi
     #   group wifi inet keystore
     class main
-    socket wpa_wlan0 dgram 660 wifi wifi u:object_r:wpa_socket:s0
+    socket wpa_wlan0 dgram 660 wifi wifi
     disabled
     oneshot
 
@@ -471,7 +471,7 @@ service wpa_supplicant /system/bin/wpa_supplicant \
     #   user wifi
     #   group wifi inet keystore
     class main
-    socket wpa_wlan0 dgram 660 wifi wifi u:object_r:wpa_socket:s0
+    socket wpa_wlan0 dgram 660 wifi wifi
     disabled
     oneshot
 
