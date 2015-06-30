@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc1f717_2da9adde",
+        "filename": "common.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 725
+      },
+      "writtenOn": "2015-06-30T09:18:35Z",
+      "side": 0,
+      "message": "why?",
+      "revId": "d6a5987847b068f0f668a1fed6aa2622c4b15cbb",
+      "serverId": "83d63960-fecf-4fd1-a7f6-e01518638a62",
+      "unresolved": false
+    }
+  ]
+}
