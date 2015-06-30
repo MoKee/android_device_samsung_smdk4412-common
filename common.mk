@@ -31,7 +31,8 @@ PRODUCT_COPY_FILES := \
     $(COMMON_PATH)/rootdir/init.smdk4x12.usb.rc:root/init.smdk4x12.usb.rc \
     $(COMMON_PATH)/rootdir/init.trace.rc:root/init.trace.rc \
     $(COMMON_PATH)/rootdir/ueventd.smdk4x12.rc:root/ueventd.smdk4x12.rc \
-    $(COMMON_PATH)/rootdir/ueventd.smdk4x12.rc:recovery/root/ueventd.smdk4x12.rc
+    $(COMMON_PATH)/rootdir/ueventd.smdk4x12.rc:recovery/root/ueventd.smdk4x12.rc \
+    $(COMMON_PATH)/rootdir/twrp.fstab:recovery/root/etc/twrp.fstab
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -68,19 +69,16 @@ PRODUCT_PACKAGES := \
     audio.usb.default \
     com.android.future.usb.accessory \
     gralloc.exynos4 \
-    hwcomposer.exynos4 \
+    libExynosHWCService \
+    libExynosIPService \
     libfimg \
     libnetcmdiface \
     libsecion \
     libsync \
+    libUMP \
     lights.exynos4 \
     macloader \
     tinymix
-
-ifneq ($(TARGET_HAS_CAM_FLASH) ,false)
-PRODUCT_PACKAGES += \
-    Torch
-endif
 
 # MFC API
 PRODUCT_PACKAGES += \
@@ -124,7 +122,6 @@ PRODUCT_PACKAGES += \
     PhaseBeam \
     VisualizationWallpapers \
     librs_jni
-
 
 # Wifi
 PRODUCT_PACKAGES += \
@@ -174,9 +171,7 @@ PRODUCT_COPY_FILES += \
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.zygote.disable_gl_preload=1 \
-    ro.opengles.version=131072 \
-    ro.bq.gpu_to_cpu_unsupported=1 \
-    debug.hwui.render_dirty_regions=false
+    ro.opengles.version=131072
 
 PRODUCT_TAGS += dalvik.gc.type-precise
 
